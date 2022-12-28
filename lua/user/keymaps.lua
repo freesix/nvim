@@ -62,10 +62,10 @@ keymap("t", "<C-k>", [[<Cmd>wincmd k<cr>]], opts)
 keymap("t", "<C-l>", [[<Cmd>wincmd l<cr>]], opts)
 
 
-keymap("n", "<F5>", "<Cmd>lua require'dap'.continue()<CR>", opts)
-keymap("n", "<F10>", " <Cmd>lua require'dap'.step_over()<CR>", opts)
-keymap("n", "<F11>", "<Cmd>lua require'dap'.step_into()<CR>", opts)
-keymap("n", "<F12>", "<Cmd>lua require'dap'.step_out()<CR>", opts)
+keymap("n", "<F5>", "<Cmd>lua require'dap'.continue()<CR>", opts) --开始debug
+keymap("n", "<F6>", " <Cmd>lua require'dap'.step_over()<CR>", opts) --步过
+keymap("n", "<F7>", "<Cmd>lua require'dap'.step_into()<CR>", opts)  --步进
+keymap("n", "<F8>", "<Cmd>lua require'dap'.step_out()<CR>", opts)  --步出
 keymap("n", "<Leader>b", "<Cmd>lua require'dap'.toggle_breakpoint()<CR>", opts)
 keymap("n", "<Leader>B", "<Cmd>lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>", opts)
 keymap("n", "<Leader>lp", "<Cmd>lua require'dap'.set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<CR>", opts)

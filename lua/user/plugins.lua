@@ -197,11 +197,11 @@ use {
 }
 
 -- markdown
-use 'davidgranstrom/nvim-markdown-preview'
+--use 'davidgranstrom/nvim-markdown-preview'
 
 -- jupyter
 --use 'szymonmaszke/vimpyter'
-use { 'dccsillag/magma-nvim', run = ':UpdateRemotePlugins' }
+--use { 'dccsillag/magma-nvim', run = ':UpdateRemotePlugins' }
 
   if PACKER_BOOTSTRAP then
     require("packer").sync()
