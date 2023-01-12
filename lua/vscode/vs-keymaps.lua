@@ -75,10 +75,97 @@ keymap("v", "tt", ":call VSCodeNotify('workbench.action.toggleSidebarVisibility'
 -- 打开资源管理器
 keymap("n", "te", ":call VSCodeNotify('workbench.view.explorer')<cr>", opts)
 keymap("v", "te", ":call VSCodeNotify('workbench.view.explorer')<cr>", opts)
+-- 打开搜索
+keymap("n", "ts", ":call VSCodeNotify('workbench.view.search')<cr>", opts)
+keymap("v", "ts", ":call VSCodeNotify('workbench.view.search')<cr>", opts)
+-- 打开远程侧边
+keymap("n", "tr", ":call VSCodeNotify('workbench.view.remote')<cr>", opts)
+keymap("v", "tr", ":call VSCodeNotify('workbench.view.remote')<cr>", opts)
+-- 打开扩展侧边
+keymap("n", "tx", ":call VSCodeNotify('workbench.view.extensions')<cr>", opts)
+keymap("v", "tx", ":call VSCodeNotify('workbench.view.extensions')<cr>", opts)
+-- 打开问题侧边
+keymap("n", "tp", ":call VSCodeNotify('workbench.view.problems')<cr>", opts)
+keymap("v", "tp", ":call VSCodeNotify('workbench.actions.view.problems')<cr>", opts)
+-- 打开输出
+keymap("n", "to", ":call VSCodeNotify('workbench.action.output.toggleOutput')<cr>", opts)
+keymap("v", "to", ":call VSCodeNotify('workbench.action.output.toggleOutput')<cr>", opts)
+-- 打开debug控制台
+keymap("n", "td", ":call VSCodeNotify('workbench.debug.action.toggleRepl')<cr>", opts)
+keymap("v", "td", ":call VSCodeNotify('workbench.debug.action.toggleRepl')<cr>", opts)
+-- 打开bar
+keymap("n", "tb", ":call VSCodeNotify('workbench.action.toggleActivityBarVisibility')<cr>", opts)
+keymap("v", "tb", ":call VSCodeNotify('workbench.action.toggleActivityBarVisibility')<cr>", opts)
+-- 是否显示tab
+keymap("n", "tT", ":call VSCodeNotify('workbench.action.toggleTabsVisibility')<cr>", opts)
+keymap("v", "tT", ":call VSCodeNotify('workbench.action.toggleTabsVisibility')<cr>", opts)
+-- 最大化面板(仅当面板居中对齐时才支持)
+keymap("n", "tm", ":call VSCodeNotify('workbench.action.toggleMaximizedPanel')<cr>", opts)
+keymap("v", "tm", ":call VSCodeNotify('workbench.action.toggleMaximizedPanel')<cr>", opts)
+-- 进入禅模式
+keymap("n", "tz", ":call VSCodeNotify('workbench.action.toggleZenMode')<cr>", opts)
+keymap("v", "tz", ":call VSCodeNotify('workbench.action.toggleZenMode')<cr>", opts)
+-- 关闭面板
+keymap("n", "tc", ":call VSCodeNotify('workbench.action.closePanel')<cr>", opts)    
+keymap("v", "tc", ":call VSCodeNotify('workbench.action.closePanel')<cr>", opts)   
 
 
+-----------窗口相关-----------
+-- 拆分编辑器在下边
+keymap("n", "wj", ":call VSCodeNotify('workbench.action.splitEditorDown')<cr>", opts)
+keymap("v", "wj", ":call VSCodeNotify('workbench.action.splitEditorDown')<cr>", opts)
+-- 拆分编辑器在右边
+keymap("n", "wl", ":call VSCodeNotify('workbench.action.splitEditorRight')<cr>", opts)
+keymap("v", "wl", ":call VSCodeNotify('workbench.action.splitEditorRight')<cr>", opts)
+-- 拆分编辑器在上边
+keymap("n", "wk", ":call VSCodeNotify('workbench.action.splitEditorUp')<cr>", opts)
+keymap("v", "wk", ":call VSCodeNotify('workbench.action.splitEditorUp')<cr>", opts)
+-- 拆分编辑器在左边
+keymap("n", "wh", ":call VSCodeNotify('workbench.action.splitEditorLeft')<cr>", opts)
+keymap("v", "wh", ":call VSCodeNotify('workbench.action.splitEditorLeft')<cr>", opts)
+-- 光标移动到左边窗口
+keymap("n", "<leader>h", ":call VSCodeNotify('workbench.action.focusLeftGroup')<cr>", opts)
+keymap("v", "<leader>h", ":call VSCodeNotify('workbench.action.focusLeftGroup')<cr>", opts)
+-- 光标移动到下边窗口
+keymap("n", "<leader>j", ":call VSCodeNotify('workbench.action.focusBelowGroup')<cr>", opts)
+keymap("v", "<leader>j", ":call VSCodeNotify('workbench.action.focusBelowGroup')<cr>", opts)
+-- 光标移动到上边窗口
+keymap("n", "<leader>k", ":call VSCodeNotify('workbench.action.focusAboveGroup')<cr>", opts)
+keymap("v", "<leader>k", ":call VSCodeNotify('workbench.action.focusAboveGroup')<cr>", opts)
+-- 光标移动到右边窗口
+keymap("n", "<leader>l", ":call VSCodeNotify('workbench.action.focusRightGroup')<cr>", opts)
+keymap("v", "<leader>l", ":call VSCodeNotify('workbench.action.focusRightGroup')<cr>", opts)
+-- 最大化当前编辑器
+keymap("n", "wm", ":call VSCodeNotify('workbench.action.toggleEditorWidths')<cr>", opts)
+keymap("v", "wm", ":call VSCodeNotify('workbench.action.toggleEditorWidths')<cr>", opts)
+-- 恢复编辑器大小
+keymap("n", "wr", ":call VSCodeNotify('workbench.action.evenEditorWidths')<cr>", opts)
+keymap("v", "wr", ":call VSCodeNotify('workbench.action.evenEditorWidths')<cr>", opts)
+
+
+
+----------搜索相关-----------
+-- 在整个项目中搜索选中
+keymap("n", "ss", ":call VSCodeNotify('editor.action.addSelectionToNextFindMatch')<cr>:call VSCodeNotify('workbench.action.findInFiles')<cr>", opts)
+keymap("v", "ss", ":call VSCodeNotify('editor.action.addSelectionToNextFindMatch')<cr>:call VSCodeNotify('workbench.action.findInFiles')<cr>", opts)
+-- 在当前编辑器中搜索
+keymap("n", "sf", ":call VSCodeNotify('actions.find')<cr>", opts)
+keymap("v", "sf", ":call VSCodeNotify('actions.find')<cr>", opts)
+
+
+-----------调整页面相关大小----------
+-- 调大字体大小
+keymap("n", "=+", ":call VSCodeNotify('editor.action.fontZoomIn')<cr>", opts)
+keymap("v", "=+", ":call VSCodeNotify('editor.action.fontZoomIn')<cr>", opts)
+-- 调小字体大小
+keymap("n", "=-", ":call VSCodeNotify('editor.action.fontZoomOut')<cr>", opts)
+keymap("v", "=-", ":call VSCodeNotify('editor.action.fontZoomOut')<cr>", opts)
+-- 恢复字体大小
+keymap("n", "=r", ":call VSCodeNotify('editor.action.fontZoomReset')<cr>", opts)
+keymap("v", "=r", ":call VSCodeNotify('editor.action.fontZoomReset')<cr>", opts)
+-- 调整图片大小
 -----------格式相关-----------
---格式当前文件
+--格式当前文件  
 keymap("n", "==", ":call VSCodeNotify('editor.action.formatDocument')<cr>", opts)
 keymap("v", "==", ":call VSCodeNotify('editor.action.formatDocument')<cr>", opts)
 
@@ -108,6 +195,9 @@ keymap("v", "gp", ":call VSCodeNotify('git.publish')<cr>", opts)
 -- git状态
 keymap("n", "gs", ":call VSCodeNotify('workbench,view,scm')<cr>", opts)
 keymap("v", "gs", ":call VSCodeNotify('workbench,view,scm')<cr>", opts)
+
+
+
 
 
 
