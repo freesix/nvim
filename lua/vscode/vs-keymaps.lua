@@ -78,6 +78,9 @@ keymap("v", "te", ":call VSCodeNotify('workbench.view.explorer')<cr>", opts)
 -- 打开搜索
 keymap("n", "ts", ":call VSCodeNotify('workbench.view.search')<cr>", opts)
 keymap("v", "ts", ":call VSCodeNotify('workbench.view.search')<cr>", opts)
+-- 打开测试单元
+keymap("n", "tu", ":call VSCodeNotify('workbench.view.extension.test')<cr>", opts)
+keymap("v", "tu", ":call VSCodeNotify('workbench.view.extension.test')<cr>", opts)
 -- 打开远程侧边
 keymap("n", "tr", ":call VSCodeNotify('workbench.view.remote')<cr>", opts)
 keymap("v", "tr", ":call VSCodeNotify('workbench.view.remote')<cr>", opts)
@@ -170,6 +173,15 @@ keymap("n", "==", ":call VSCodeNotify('editor.action.formatDocument')<cr>", opts
 keymap("v", "==", ":call VSCodeNotify('editor.action.formatDocument')<cr>", opts)
 
 
+-----------vscode窗口有关----------
+-- 重启vscode
+keymap("n", "ar", ":call VSCodeNotify('workbench.action.reloadWindow')<cr>", opts)
+keymap("v", "ar", ":call VSCodeNotify('workbench.action.reloadWindow')<cr>", opts)
+-- 关闭VScode
+keymap("n", "ac", ":call VSCodeNotify('workbench.action.closeWindow')<cr>", opts)
+keymap("v", "ac", ":call VSCodeNotify('workbench.action.closeWindow')<cr>", opts)
+
+
 -----------git相关-----------
 -- 切换或者签出分支
 keymap("n", "gb", ":call VSCodeNotify('git.checkout')<cr>", opts)
@@ -198,30 +210,22 @@ keymap("v", "gs", ":call VSCodeNotify('workbench,view,scm')<cr>", opts)
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+-----------函数定义声明跳转等操作---------------
+-- 转到定义 
+keymap("n", "<leader>gd", ":call VSCodeNotify('editor.action.revealDefinition')<cr>", opts)
+keymap("v", "<leader>gd", ":call VSCodeNotify('editor.action.revealDefinition')<cr>", opts)
+-- 速览定义
+keymap("n", "<leader>pd", ":call VSCodeNotify('editor.action.peekDefinition')<cr>", opts)       
+keymap("v", "<leader>pd", ":call VSCodeNotify('editor.action.peekDefinition')<cr>", opts)       
+-- 显示定义预览悬停
+keymap("n", "<leader>sd", ":call VSCodeNotify('editor.action.showDefinitionPreviewHover')<cr>", opts)
+keymap("v", "<leader>sd", ":call VSCodeNotify('editor.action.showDefinitionPreviewHover')<cr>", opts)
+-- 查看声明
+keymap("n", "<leader>pl", ":call VSCodeNotify('editor.action.peekDeclaration')<cr>", opts)
+keymap("v", "<leader>pl", ":call VSCodeNotify('editor.action.peekDeclaration')<cr>", opts)
+-- 转到声明
+keymap("n", "<leader>gl", ":call VSCodeNotify('editor.action.revealDeclaration')<cr>", opts)
+keymap("v", "<leader>gl", ":call VSCodeNotify('editor.action.revealDeclaration')<cr>", opts)
 
 -- vim的复制到系统剪切板
 vim.cmd [[
