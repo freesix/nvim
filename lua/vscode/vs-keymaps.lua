@@ -67,7 +67,6 @@ keymap("v", "bw", ":call VSCodeNotify('workbench.action.files.showOpenedFileInNe
 keymap("n", "fr", ":call VSCodeNotify('workbench.action.openRecent')<cr>", opts)
 keymap("v", "fr", ":call VSCodeNotify('workbench.action.openRecent')<cr>", opts)
 
-
 -----------侧边栏相关---------
 --打开侧边栏
 keymap("n", "tt", ":call VSCodeNotify('workbench.action.toggleSidebarVisibility')<cr>", opts)
@@ -87,6 +86,9 @@ keymap("v", "tr", ":call VSCodeNotify('workbench.view.remote')<cr>", opts)
 -- 打开扩展侧边
 keymap("n", "tx", ":call VSCodeNotify('workbench.view.extensions')<cr>", opts)
 keymap("v", "tx", ":call VSCodeNotify('workbench.view.extensions')<cr>", opts)
+-- 打开latex侧边
+keymap("n", "tl", ":call VSCodeNotify('workbench.view.extension.latex-workshop-activitybar')<cr>", opts)
+keymap("v", "tl", ":call VSCodeNotify('workbench.view.extension.latex-workshop-activitybar')<cr>", opts)
 -- 打开问题侧边
 keymap("n", "tp", ":call VSCodeNotify('workbench.view.problems')<cr>", opts)
 keymap("v", "tp", ":call VSCodeNotify('workbench.actions.view.problems')<cr>", opts)
@@ -146,6 +148,22 @@ keymap("n", "wr", ":call VSCodeNotify('workbench.action.evenEditorWidths')<cr>",
 keymap("v", "wr", ":call VSCodeNotify('workbench.action.evenEditorWidths')<cr>", opts)
 
 
+----------debug相关----------
+-- 设置断点
+keymap("n", "db", ":call VSCodeNotify('editor.debug.action.toggleBreakpoint')<cr>", opts)
+keymap("v", "db", ":call VSCodeNotify('editor.debug.action.toggleBreakpoint')<cr>", opts)
+-- 跳转到光标
+keymap("n", "dj", ":call VSCodeNotify('debug.jumpToCursor')<cr>", opts)
+keymap("v", "dj", ":call VSCodeNotify('debug.jumpToCursor')<cr>", opts)
+-- 转到debug控制台
+keymap("n", "dr", ":call VSCodeNotify('workbench.debug.action.toggleRepl')<cr>", opts)
+keymap("v", "dr", ":call VSCodeNotify('workbench.debug.action.toggleRepl')<cr>", opts)
+-- 转到watch窗口
+keymap("n", "dw", ":call VSCodeNotify('workbench.debug.action.focusWatchView')<cr>", opts)
+keymap("v", "dw", ":call VSCodeNotify('workbench.debug.action.focusWatchView')<cr>", opts)
+-- 将选中添加到watch窗口
+keymap("n", "da", ":call VSCodeNotify('editor.debug.action.selectionTowatch')<cr>", opts)
+keymap("v", "da", ":call VSCodeNotify('editor.debug.action.selectionTowatch')<cr>", opts)
 
 ----------搜索相关-----------
 -- 在整个项目中搜索选中
@@ -175,11 +193,11 @@ keymap("v", "==", ":call VSCodeNotify('editor.action.formatDocument')<cr>", opts
 
 -----------vscode窗口有关----------
 -- 重启vscode
-keymap("n", "ar", ":call VSCodeNotify('workbench.action.reloadWindow')<cr>", opts)
-keymap("v", "ar", ":call VSCodeNotify('workbench.action.reloadWindow')<cr>", opts)
+keymap("n", "rr", ":call VSCodeNotify('workbench.action.reloadWindow')<cr>", opts)
+keymap("v", "rr", ":call VSCodeNotify('workbench.action.reloadWindow')<cr>", opts)
 -- 关闭VScode
-keymap("n", "ac", ":call VSCodeNotify('workbench.action.closeWindow')<cr>", opts)
-keymap("v", "ac", ":call VSCodeNotify('workbench.action.closeWindow')<cr>", opts)
+keymap("n", "rc", ":call VSCodeNotify('workbench.action.closeWindow')<cr>", opts)
+keymap("v", "rc", ":call VSCodeNotify('workbench.action.closeWindow')<cr>", opts)
 
 
 -----------git相关-----------
@@ -226,6 +244,24 @@ keymap("v", "<leader>pl", ":call VSCodeNotify('editor.action.peekDeclaration')<c
 -- 转到声明
 keymap("n", "<leader>gl", ":call VSCodeNotify('editor.action.revealDeclaration')<cr>", opts)
 keymap("v", "<leader>gl", ":call VSCodeNotify('editor.action.revealDeclaration')<cr>", opts)
+
+
+
+------------latex相关----------------
+-- 在tab打开latex的pdf
+keymap("n", "mlt", ":call VSCodeNotify('latex-workshop.tab')<cr>", opts)
+keymap("v", "mlt", ":call VSCodeNotify('latex-workshop.tab')<cr>", opts)
+-- 在浏览器中打开latex的pdf
+keymap("n", "mlw", ":call VSCodeNotify('latex-workshop.viewInBrowser')<cr>", opts)
+keymap("v", "mlw", ":call VSCodeNotify('latex-workshop.viewInBrowser')<cr>", opts)
+-- 编译当前latex文件
+keymap("n", "mlb", ":call VSCodeNotify('latex-workshop.build')<cr>", opts)
+keymap("v", "mlb", ":call VSCodeNotify('latex-workshop.build')<cr>", opts)
+-- 显示latex编译log日志
+keymap("n", "mll", ":call VSCodeNotify('latex-workshop.compilerlog')<cr>", opts)
+keymap("v", "mll", ":call VSCodeNotify('latex-workshop.compilerlog')<cr>", opts)
+
+
 
 -- vim的复制到系统剪切板
 vim.cmd [[
