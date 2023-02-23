@@ -198,6 +198,9 @@ keymap("v", "rr", ":call VSCodeNotify('workbench.action.reloadWindow')<cr>", opt
 -- 关闭VScode
 keymap("n", "rc", ":call VSCodeNotify('workbench.action.closeWindow')<cr>", opts)
 keymap("v", "rc", ":call VSCodeNotify('workbench.action.closeWindow')<cr>", opts)
+-- 重新打开一个vscode窗口
+keymap("n", "rn", ":call VSCodeNotify('workbench.action.newWindow')<cr>", opts)
+keymap("v", "rn", ":call VSCodeNotify('workbench.action.newWindow')<cr>", opts)
 
 
 -----------git相关-----------
@@ -260,9 +263,35 @@ keymap("v", "mlb", ":call VSCodeNotify('latex-workshop.build')<cr>", opts)
 -- 显示latex编译log日志
 keymap("n", "mll", ":call VSCodeNotify('latex-workshop.compilerlog')<cr>", opts)
 keymap("v", "mll", ":call VSCodeNotify('latex-workshop.compilerlog')<cr>", opts)
+-- 跳转到聚焦到对应pdf处
+keymap("n", "mls", ":call VSCodeNotify('latex-workshop.synctex')<cr>", opts)
+keymap("v", "mls", ":call VSCodeNotify('latex-workshop.synctex')<cr>", opts)
 
 
+-----------markdown相关---------------
+-- 在侧边打开markdown预览
+keymap("n", "mt", ":call VSCodeNotify('markdown.showPreviewToSide')<cr>", opts)
+keymap("v", "mt", ":call VSCodeNotify('markdown.showPreviewToSide')<cr>", opts)
+-- 打开预览
+keymap("n", "mp", ":call VSCodeNotify('markdown.showPreview')<cr>", opts)
+keymap("v", "mp", ":call VSCodeNotify('markdown.showPreview')<cr>", opts)
+-- 同步（编译）当前markdown
+keymap("n", "mb", ":call VSCodeNotify('markdown.preview.refresh')<cr>", opts)
+keymap("v", "mb", ":call VSCodeNotify('markdown.preview.refresh')<cr>", opts)
+-- 显示源
+keymap("n", "ms", ":call VSCodeNotify('markdown.showSource')<cr>", opts)
+keymap("v", "ms", ":call VSCodeNotify('markdown.showSource')<cr>", opts)
 
+
+----------快速移动插件-----------------
+-- 移动到单词前，这里采用nn快捷键是因为这个没有其他占用
+keymap("n", "nn", ":call VSCodeNotify('jump-extension.jump-to-the-start-of-a-word')<cr>", opts)
+keymap("v", "nn", ":call VSCodeNotify('jump-extension.jump-to-the-start-of-a-word')<cr>", opts)
+
+
+----------折叠资源文件----------------
+keymap("n", "ee", ":call VSCodeNotify('workbench.files.action.collapseExplorerFolders')<cr>", opts)
+keymap("v", "ee", ":call VSCodeNotify('workbench.files.action.collapseExplorerFolders')<cr>", opts)
 -- vim的复制到系统剪切板
 vim.cmd [[
 let s:clip = '/mnt/c/Windows/System32/clip.exe' 
