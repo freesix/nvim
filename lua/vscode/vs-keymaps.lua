@@ -115,6 +115,12 @@ keymap("n", "tc", ":call VSCodeNotify('workbench.action.closePanel')<cr>", opts)
 keymap("v", "tc", ":call VSCodeNotify('workbench.action.closePanel')<cr>", opts)   
 
 
+-----------Coilpt相关---------
+-- 打开Coilpt上边栏
+keymap("n", "tC", ":call VSCodeNotify('workbench.action.openQuickChat.copilot')<cr>", opts)
+keymap("v", "tC", ":call VSCodeNotify('workbench.action.openQuickChat.copilot')<cr>", opts)
+
+
 -----------窗口相关-----------
 -- 拆分编辑器在下边
 keymap("n", "wj", ":call VSCodeNotify('workbench.action.splitEditorDown')<cr>", opts)
