@@ -53,6 +53,7 @@ keymap("v", ">", ">gv", opts)
 
 -- Nvim-tree
 keymap("n", "te", ":NvimTreeToggle<cr>", opts)
+keymap("n", "tt", ":NvimTreeFocus<cr>", opts)
 
 -- 水平/垂直分割打开文件
 keymap('n', 'tv', ':vsplit | :NvimTreeFindFile<CR>', opts)

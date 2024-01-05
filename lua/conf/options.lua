@@ -4,7 +4,7 @@ local options = {
   cmdheight = 1,                           -- keep status bar position close to bottom
   completeopt = { "menuone", "noselect" }, -- mostly just for cmp
   conceallevel = 0,                        -- so that `` is visible in markdown files
- fileencoding = "utf-8",                  -- the encoding written to a file
+  fileencoding = "utf-8",                  -- the encoding written to a file
   hlsearch = true,                         -- highlight all matches on previous search pattern
   ignorecase = true,                       -- ignore case in search patterns
   mouse = "a",                             -- allow the mouse to be used in neovim
@@ -45,6 +45,8 @@ local options = {
 }
 
 vim.opt.shortmess:append "c"
+
+vim.cmd [[set colorcolumn=100]]
 
 for k, v in pairs(options) do
   vim.opt[k] = v
