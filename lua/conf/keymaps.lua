@@ -54,16 +54,15 @@ keymap("v", ">", ">gv", opts)
 -- Nvim-tree
 keymap("n", "te", ":NvimTreeToggle<cr>", opts)
 keymap("n", "tt", ":NvimTreeFocus<cr>", opts)
-
--- 水平/垂直分割打开文件
 keymap('n', 'tv', ':vsplit | :NvimTreeFindFile<CR>', opts)
 keymap('n', 'th', ':split | :NvimTreeFindFile<CR>', opts)
 --keymap("n", "tc", ":NvimTreeCollapse<cr>", opts)
 --keymap("n", "tk", ":NvimTreeCollapseKeepBuffers<cr>", opts)
 
+-- bufferline
 keymap("n", "bp", ":BufferLineCyclePrev<cr>", opts)
 keymap("n", "bn", ":BufferLineCycleNext<cr>", opts)
-keymap("n", "bc", ":BufferLinePickClose<cr>", opts)
+keymap("n", "bc", ":bdelete!<cr>", opts)
 
 
 --keymap("n", "tf", ":ToggleTerm direction=float<cr>", opts)

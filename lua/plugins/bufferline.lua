@@ -43,7 +43,12 @@ return{
         diagnostics_update_in_insert = false,
         -- The diagnostics indicator can be set to nil to keep the buffer name highlight but delete the highlighting
         diagnostics_indicator = function(count, level, diagnostics_dict, context)
-            return "("..count..")"
+          local s = " "
+          for e, n in pairs(diagnostics_dict) do
+            local sym = e == "error" and " " or (e == "warning" and " " or "")
+            s = s .. n .. sym
+          end
+          return s
         end,
         --[[ -- NOTE: this will be called a lot so don't do any heavy processing here
         custom_filter = function(buf_number, buf_numbers)
@@ -94,7 +99,7 @@ return{
         move_wraps_at_ends = false, -- whether or not the move command "wraps" at the first or last position
         -- can also be a table containing 2 custom separators
         -- [focused and unfocused]. eg: { '|', '|' }
-        separator_style = "slope", -- "slant" | "slope" | "thick" | "thin" | { 'any', 'any' },
+        separator_style = "thin", -- "slant" | "slope" | "thick" | "thin" | { 'any', 'any' },
         enforce_regular_tabs = "false", -- false | true,
         always_show_bufferline = true, -- true | false,
         hover = {
