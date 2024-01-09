@@ -3,6 +3,7 @@
 ## requirements
 cmake  
 nodejs  
+ripgrep(telescope插件需要)
 
 ## 配置步骤
 ### 安装

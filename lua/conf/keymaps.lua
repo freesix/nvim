@@ -64,6 +64,12 @@ keymap("n", "bp", ":BufferLineCyclePrev<cr>", opts)
 keymap("n", "bn", ":BufferLineCycleNext<cr>", opts)
 keymap("n", "bc", ":bdelete!<cr>", opts)
 
+-- telescope 
+keymap("n", "bs", ":Telescope find_files<cr>", opts)
+-- keymap("n", "sf", ":Telescope live_grep<cr>", opts)
+keymap("n", "sf", ":Telescope buffers<cr>", opts)
+keymap("n", "ss", ":lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>", opts)
+
 
 --keymap("n", "tf", ":ToggleTerm direction=float<cr>", opts)
 --keymap("t", "<esc>", [[<C-\><C-n>]], opts)
