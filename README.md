@@ -9,5 +9,9 @@ ripgrep(telescope插件需要)
 ### 安装
 安装nvim和nodejs，还有其它的一些依赖如cmake、git等等，参照[nvim](https://github.com/neovim/neovim?tab=readme-ov-file)的安装步骤来。
 ### 配置 
-首先在`~/.config`下新建nvim文件夹，没有`.config`文件夹则新建一个， 
+首先在`~/.config`下新建nvim文件夹，没有`.config`文件夹则新建一个
+
+* options.lua
+
+里面是
 
