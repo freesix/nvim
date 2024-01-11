@@ -84,6 +84,14 @@ return{
         require("freesix.plugins.telescope")
     end,
     },
+    
+    -- toggleterm
+    {
+        "akinsho/toggleterm.nvim",
+        config = function()
+            require("freesix.plugins.toggleterm")
+        end,
+    },
 
     ---------------------- colorschemes--------------------
     -- tokyonight

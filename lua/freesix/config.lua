@@ -147,6 +147,18 @@ local UserConfig = {
     },
     },
 
+    ---@class ToggleTermConfig
+    toggleterm = {
+    -- enable 3 builtin terminal <leader>t a/b/c
+        enable = true,
+        toggle_float_window = "<leader>tf",
+        toggle_float_window_command = nil,
+        toggle_side_window = "<leader>ts",
+        toggle_side_window_command = nil,
+        toggle_bottom_window = "<leader>tb",
+        toggle_bottom_window_command = nil,
+    },
+
 }
 
   return UserConfig
