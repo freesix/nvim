@@ -1,42 +1,42 @@
 --- @param config UserConfig
 return function(config)
-  return {
+    return {
 
     getFormatOnSavePattern = function()
-      return {}
+        return {}
     end,
 
     getTSEnsureList = function()
-      return {}
+        return {}
     end,
 
     getLSPEnsureList = function()
-      return {}
+        return {}
     end,
 
     getLSPConfigMap = function()
-      return {}
+        return {}
     end,
 
     getToolEnsureList = function()
-      return {}
+        return {}
     end,
 
     getNulllsSources = function()
-      local null_ls = pRequire("null-ls")
-      if not null_ls then
+        local null_ls = pRequire("null-ls")
+        if not null_ls then
+            return {}
+        end
+        if config.git.enable and config.git.code_actions == "gitsigns" then
+            return {
+                null_ls.builtins.code_actions.gitsigns,
+            }
+        end
         return {}
-      end
-      if config.git.enable and config.git.code_actions == "gitsigns" then
-        return {
-          null_ls.builtins.code_actions.gitsigns,
-        }
-      end
-      return {}
     end,
 
     getNeotestAdapters = function()
-      return {}
+        return {}
     end,
-  }
+    }
 end

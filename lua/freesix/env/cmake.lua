@@ -1,38 +1,31 @@
---- @param config PythonConfig
+--- @param config CmakeConfig
 return function(config)
 	return {
-
 		getFormatOnSavePattern = function()
 			if config.format_on_save then
-				return { "*.py" }
+				return { "CMakeLists.txt" }
 			end
 			return {}
 		end,
 
 		getTSEnsureList = function()
-			return { "python" }
+			return { "cmake" }
 		end,
 
 		getLSPEnsureList = function()
-			if config.lsp == "pylsp" then
-				return { "pylsp" }
-			end
-			return {}
+			return { "cmake" }
 		end,
 
 		getLSPConfigMap = function()
-			if config.lsp == "pylsp" then
-				return {
-					pylsp = require("freesix.lsp.config.pylsp"),
-				}
-			end
-			return {}
+			return {
+				cmake = require("freesix.lsp.config.cmake"),
+			}
 		end,
 
 		getToolEnsureList = function()
-			if config.formatter == "black" then
-				return { "black" }
-			end
+			-- if config.formatter == "clang-format" then
+			-- 	return { "clang-format" }
+			-- end
 			return {}
 		end,
 
@@ -41,8 +34,8 @@ return function(config)
 			if not null_ls then
 				return {}
 			end
-			if config.formatter == "black" then
-				return { null_ls.builtins.formatting.black.with({ extra_args = { "--fast" } }) }
+			if config.formatter == "clang-format" then
+				return { null_ls.builtins.formatting.clang_format }
 			end
 			return {}
 		end,

@@ -1,5 +1,5 @@
 local lualine = pRequire("lualine")
--- local cfg = require("insis").config.lualine
+-- local cfg = require("freesix").config.lualine
 
 if lualine then
   lualine.setup({

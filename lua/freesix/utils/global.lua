@@ -10,7 +10,7 @@ function _G.pRequire(name)
 end
 
 function _G.getUserConfig(name)
-  return require("insis").config[name]
+  return require("freesix").config[name]
 end
 
 function _G.logLspCap()
