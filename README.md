@@ -13,5 +13,5 @@ ripgrep(telescope插件需要)
 
 * options.lua
 
-里面是
+里面是一些
 

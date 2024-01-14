@@ -242,10 +242,10 @@ local UserConfig = {
 
 	---@class CmakeConfig
 	cmake = {
-		enable = false,
+		enable = true,
 		lsp = "cmake",
 		-- linter = "clangd-tidy",
-		formatter = "",
+		formatter = "cmakelang",
 		format_on_save = false,
 	},
 
@@ -289,7 +289,7 @@ local UserConfig = {
 
 	---@class MarkdownConfig
 	markdown = {
-		enable = false,
+		enable = true,
 		mkdnflow = {
 			next_link = "gn",
 			prev_link = "gp",

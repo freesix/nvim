@@ -11,6 +11,9 @@ else
 		python = {
 			enable = true,
 		},
+		markdown = {
+			true,
+		},
 	})
 
 	--require ("user.lazy")
