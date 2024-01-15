@@ -182,13 +182,13 @@ local UserConfig = {
 	---@class LSPConfig
 	lsp = {
 		-- jumps to the declaration
-		definition = "gd",
+		definition = "<leader>gd",
 		-- jumps to the declaration, many servers do not implement this method
 		declaration = false,
 		-- displays hover information
-		hover = "sh",
+		hover = "<leader>sd",
 		-- lists all the implementations
-		implementation = "gi",
+		implementation = "<leader>gi",
 		-- lists all the references to the symbol
 		references = "gr",
 
@@ -200,6 +200,21 @@ local UserConfig = {
 		goto_next = "gj",
 		goto_prev = "gk",
 		list = "gl",
+	},
+
+	---@class DAPConfig
+	dap = {
+		-- start, stop
+		continue = "<F5>",
+		terminate = "<C-F5>",
+		--  stepOver, stepInto, stepOut,
+		step_over = "<F10>",
+		step_into = "<F11>",
+		step_out = "<F12>",
+		-- breakpoints
+		toggle_breakpoint = "db",
+		clear_breakpoints = "<leader>db",
+		eval = "<leader>dh",
 	},
 
 	------------------------------------

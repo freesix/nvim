@@ -2,17 +2,16 @@ local nvimTree = pRequire("nvim-tree")
 local cfg = require("freesix").config.nvimTree
 
 if nvimTree and cfg and cfg.enable then
-  keymap("n", cfg.keys.toggle, ":NvimTreeToggle<cr>")
-  keymap("n", cfg.keys.focus, ":NvimTreeFocus<cr>")
-  local function on_attach(bufnr)
-    local api = require("nvim-tree.api")
-    local function opts(desc)
-      return { desc = "nvim-tree: " .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
-    end
-    keymap("n", cfg.keys.refresh, api.tree.reload, opts("Refresh"))
-
-    -- open / close --
-[[    keymap("n", cfg.keys.edit, api.node.open.edit, opts("Open"))
+	keymap("n", cfg.keys.toggle, ":NvimTreeToggle<cr>")
+	keymap("n", cfg.keys.focus, ":NvimTreeFocus<cr>")
+	local function on_attach(bufnr)
+		local api = require("nvim-tree.api")
+		local function opts(desc)
+			return { desc = "nvim-tree: " .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
+		end
+		keymap("n", cfg.keys.refresh, api.tree.reload, opts("Refresh"))(
+			-- open / close --
+			[[    keymap("n", cfg.keys.edit, api.node.open.edit, opts("Open"))
     keymap("n", cfg.keys.close, api.node.navigate.parent_close, opts("Close Directory"))
     keymap("n", cfg.keys.system_open, api.node.run.system, opts("Run System"))
     keymap("n", cfg.keys.vsplit, api.node.open.vertical, opts("Open: Vertical Split"))
@@ -42,61 +41,62 @@ if nvimTree and cfg and cfg.enable then
     keymap("n", cfg.keys.copy_path, api.fs.copy.relative_path, opts("Copy Relative Path"))
     keymap("n", cfg.copy_absolute_path, api.fs.copy.absolute_path, opts("Copy Absolute Path"))
     keymap("n", cfg.toggle_file_info, api.node.show_info_popup, opts("Info")) ]]
-  end 
-  -- disable netrw at the very start of your init.lua (strongly advised)
-  vim.g.loaded_netrw = 1
-  vim.g.loaded_netrwPlugin = 1
+		)
+	end
+	-- disable netrw at the very start of your init.lua (strongly advised)
+	vim.g.loaded_netrw = 1
+	vim.g.loaded_netrwPlugin = 1
 
-  nvimTree.setup({
-    --on_attach = on_attach,
-    update_focused_file = {
-      enable = true,
-      update_root = true,
-    },
-    git = {
-      enable = true,
-      ignore = true,
-    },
-    filters = {
-      -- hide dot files
-      dotfiles = true,
-      -- hide node_modules folder
-      -- custom = { "node_modules" },
-    },
-    view = {
-      width = 34,
-      -- or 'right'
-      side = "left",
-      number = false,
-      relativenumber = false,
-      signcolumn = "yes",
-    },
-    actions = {
-      open_file = {
-        resize_window = true,
-        quit_on_open = false,
-      },
-    },
-    system_open = {
-      -- NOTE: WSL need wsl-open
-      -- npm install -g wsl-open
-      -- https://github.com/4U6U57/wsl-open/
-      cmd = isWSL() and "wsl-open" or "open",
-    },
-    renderer = {
-      root_folder_label = false,
-      indent_markers = {
-        enable = false,
-        icons = {
-          corner = "└ ",
-          edge = "│ ",
-          none = "  ",
-        },
-      },
-      icons = {
-        webdev_colors = true,
-        git_placement = "after",
-      },
-    },
-  })
+	nvimTree.setup({
+		--on_attach = on_attach,
+		update_focused_file = {
+			enable = true,
+			update_root = true,
+		},
+		git = {
+			enable = true,
+			ignore = false, -- 不显示 ignore文件中的
+		},
+		filters = {
+			-- hide dot files
+			dotfiles = true, -- 不显示 .* 文件
+			-- hide node_modules folder
+			-- custom = { "node_modules" },
+		},
+		view = {
+			width = 34,
+			-- or 'right'
+			side = "left",
+			number = false,
+			relativenumber = false,
+			signcolumn = "yes",
+		},
+		actions = {
+			open_file = {
+				resize_window = true,
+				quit_on_open = false,
+			},
+		},
+		system_open = {
+			-- NOTE: WSL need wsl-open
+			-- npm install -g wsl-open
+			-- https://github.com/4U6U57/wsl-open/
+			cmd = isWSL() and "wsl-open" or "open",
+		},
+		renderer = {
+			root_folder_label = false,
+			indent_markers = {
+				enable = false,
+				icons = {
+					corner = "└ ",
+					edge = "│ ",
+					none = "  ",
+				},
+			},
+			icons = {
+				webdev_colors = true,
+				git_placement = "after",
+			},
+		},
+	})
 end

@@ -143,6 +143,12 @@ return {
 	-- UI improvement
 	{ "onsails/lspkind-nvim" },
 
+	------------------ dap -------------------------------------
+	{ "mfussenegger/nvim-dap" },
+	{ "theHamsta/nvim-dap-virtual-text" },
+	{ "rcarriga/nvim-dap-ui" },
+	{ "folke/neodev.nvim" },
+
 	------------------ Markdown -------------------------------------------------
 	{
 		"jakewvincent/mkdnflow.nvim",

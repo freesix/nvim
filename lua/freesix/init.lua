@@ -18,6 +18,7 @@ function M.setup(user_config)
 	require("freesix.colorscheme").reset()
 	require("freesix.lsp")
 	require("freesix.cmp")
+	require("freesix.dap")
 
 	require("freesix.utils.color-preview")
 	require("freesix.autocmds")
