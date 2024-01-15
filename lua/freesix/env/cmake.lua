@@ -13,7 +13,7 @@ return function(config)
 		end,
 
 		getLSPEnsureList = function()
-			return { "cmake-language-server" }
+			return { "cmake" }
 		end,
 
 		getLSPConfigMap = function()
@@ -23,8 +23,8 @@ return function(config)
 		end,
 
 		getToolEnsureList = function()
-			if config.formatter == "cmakelang" then
-				return { "cmakelang" }
+			if config.formatter == "clang-format" then
+				return { "clang-format" }
 			end
 			return {}
 		end,
@@ -34,8 +34,9 @@ return function(config)
 			if not null_ls then
 				return {}
 			end
-			if config.formatter == "cmakelang" then
-				return { null_ls.builtins.formatting.cmakelang }
+
+			if config.formatter == "clang-format" then
+				return { null_ls.builtins.formatting.clang_format }
 			end
 			return {}
 		end,

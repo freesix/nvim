@@ -259,7 +259,6 @@ local UserConfig = {
 	cmake = {
 		enable = true,
 		lsp = "cmake",
-		-- linter = "clangd-tidy",
 		formatter = "cmakelang",
 		format_on_save = false,
 	},

@@ -4,8 +4,6 @@ local opts = {
 	capabilities = common.capabilities,
 	flags = common.flags,
 
-	cmd = "cmake-language-server",
-	filetype = { "cmake" },
 	init_options = {
 		buildDirectory = "build",
 	},

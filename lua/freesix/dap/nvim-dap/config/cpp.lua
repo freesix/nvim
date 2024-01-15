@@ -18,6 +18,7 @@ function M.setup()
 			program = function()
 				return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
 			end,
+
 			args = function()
 				local input = vim.fn.input("Input args: ")
 				return require("freesix.dap.nvim-dap.dap-util").str2argtable(input)

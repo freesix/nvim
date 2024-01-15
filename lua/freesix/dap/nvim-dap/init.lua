@@ -69,9 +69,9 @@ if dap and dapui and vt and neodev then
 	if cfg.clangd and cfg.clangd.enable then
 		require("freesix.dap.nvim-dap.config.cpp").setup()
 	end
-	-- if cfg.lua and cfg.lua.enable then
-	-- 	require("freesix.dap.nvim-dap.config.lua").setup()
-	-- end
+	if cfg.lua and cfg.lua.enable then
+		require("freesix.dap.nvim-dap.config.lua").setup()
+	end
 	--
 	-- if cfg.frontend and cfg.frontend.enable then
 	-- 	require("freesix.dap.nvim-dap.config.vscode-js")
