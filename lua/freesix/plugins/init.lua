@@ -160,12 +160,13 @@ return {
 
 	{
 		"iamcco/markdown-preview.nvim",
+		enabled = true,
 		-- enabled = function()
 		-- 	local cfg = require("freesix").config.markdown
 		-- 	return cfg and cfg.enable
 		-- end,
 		config = function()
-			require("freesix.plugins.markdown-preview").setup()
+			require("freesix.plugins.markdown-preview")
 		end,
 		cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
 		ft = { "markdown" },
@@ -175,6 +176,14 @@ return {
 		-- build = function()
 		-- 	vim.fn["mkdp#util#install"]()
 		-- end,
+	},
+
+	------------------- latex -----------------------------
+	{
+		"lervag/vimtex",
+		config = function()
+			require("freesix.plugins.vimtex")
+		end,
 	},
 
 	---------------------- colorschemes--------------------

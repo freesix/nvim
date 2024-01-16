@@ -3,7 +3,7 @@ return function(config)
 	return {
 		getFormatOnSavePattern = function()
 			if config.format_on_save then
-				return { "*.cmake" }
+				return { "*.txt" }
 			end
 			return {}
 		end,
