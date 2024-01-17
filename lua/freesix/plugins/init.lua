@@ -92,6 +92,14 @@ return {
 		end,
 	},
 
+	-- git
+	{
+		"lewis6991/gitsigns.nvim",
+		config = function()
+			require("freesix.plugins.gitsigns")
+		end,
+	},
+
 	-- treesitter
 	{
 		"HiPhish/rainbow-delimiters.nvim",
@@ -201,4 +209,19 @@ return {
 	--     require("freesix.plugins.vscode")
 	-- end
 	-- }
+
+	--
+	--  copilot
+	{
+		"zbirenbaum/copilot.lua",
+		config = function()
+			require("freesix.plugins.copilot").copilot()
+		end,
+	},
+	{
+		"zbirenbaum/copilot-cmp",
+		config = function()
+			require("freesix.plugins.copilot").copilot_cmp()
+		end,
+	},
 }

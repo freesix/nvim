@@ -14,6 +14,10 @@ else
 		markdown = {
 			true,
 		},
+		cmp = {
+			-- 启用 copilot
+			copilot = true,
+		},
 	})
 
 	--require ("user.lazy")

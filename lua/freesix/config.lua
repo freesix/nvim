@@ -39,6 +39,19 @@ local UserConfig = {
 		terminal_to_normal = "<Esc>",
 	},
 
+	---@class STabConfig
+	s_tab = {
+		enable = true,
+		keys = {
+			split = "ts",
+			prev = "th",
+			next = "tl",
+			first = "tj",
+			last = "tk",
+			close = "tc",
+		},
+	},
+
 	---@class BufferLineConfig
 	bufferLine = {
 		enable = true,

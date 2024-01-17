@@ -29,3 +29,14 @@ keymap("n", keys.n_resize_right, ":vertical resize -2<cr>")
 -- Stay in indent mode
 keymap("v", "<", "<gv")
 keymap("v", ">", ">gv")
+
+-- super tab
+if cfg.s_tab ~= nil and cfg.s_tab.enable then
+	local tkey = cfg.s_tab.keys
+	keymap("n", tkey.split, "<CMD>tab split<CR>")
+	keymap("n", tkey.close, "<CMD>tabclose<CR>")
+	keymap("n", tkey.next, "<CMD>tabnext<CR>")
+	keymap("n", tkey.prev, "<CMD>tabprev<CR>")
+	keymap("n", tkey.first, "<CMD>tabfirst<CR>")
+	keymap("n", tkey.last, "<CMD>tablast<CR>")
+end
