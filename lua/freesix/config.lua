@@ -143,6 +143,7 @@ local UserConfig = {
 			live_grep = "<C-f>",
 			-- super find  "xx" -tmd ---@see telescope-live-grep-args.nvim
 			live_grep_args = "ss",
+			current_buffer_fuzzy_find = "sf",
 			-- up and down
 			move_selection_next = "<C-j>",
 			move_selection_previous = "<C-k>",
