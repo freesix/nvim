@@ -1,14 +1,12 @@
-local opts = {noremap = ture, silent = true}
+local opts = { noremap = ture, silent = true }
 
-local term_opts = {silent = true}
+local term_opts = { silent = true }
 
- 
 local keymap = vim.api.nvim_set_keymap
 
 -- 映射leader键
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
-
 
 keymap("n", "<tab>", ":call VSCodeNotify('whichkey.show')<cr>", opts)
 keymap("n", "J", "5j", opts)
@@ -25,7 +23,7 @@ keymap("v", "L", "$", opts)
 -----------tab相关------------
 keymap("n", "bs", ":call VSCodeNotify('workbench.action.showAllEditors'),<cr>", opts)
 keymap("v", "bs", ":call VSCodeNotify('workbench.action.showAllEditors'),<cr>", opts)
--- 关闭当前tab 
+-- 关闭当前tab
 keymap("n", "bc", ":call VSCodeNotify('workbench.action.closeActiveEditor'),<cr>", opts)
 keymap("v", "bc", ":call VSCodeNotify('workbench.action.closeActiveEditor'),<cr>", opts)
 -- 向左拆分当前tab
@@ -54,7 +52,7 @@ keymap("n", "bp", ":call VSCodeNotify('workbench.action.previousEditor')<cr>", o
 keymap("v", "bp", ":call VSCodeNotify('workbench.action.previousEditor')<cr>", opts)
 -- 新建一个编辑器
 keymap("n", "bN", ":call VSCodeNotify('workbench.action.files.newUntitledFile')<cr>", opts)
-keymap("v", "bN", ":call VSCodeNotify('workbench.action.files.newUntitledFile')<cr>", opts)   
+keymap("v", "bN", ":call VSCodeNotify('workbench.action.files.newUntitledFile')<cr>", opts)
 -- 重新打开关闭的编辑器
 keymap("n", "br", ":call VSCodeNotify('workbench.action.reopenClosedEditor')<cr>", opts)
 keymap("v", "br", ":call VSCodeNotify('workbench.action.reopenClosedEditor')<cr>", opts)
@@ -92,6 +90,9 @@ keymap("v", "tl", ":call VSCodeNotify('workbench.view.extension.latex-workshop-a
 -- 打开问题侧边
 keymap("n", "tp", ":call VSCodeNotify('workbench.view.problems')<cr>", opts)
 keymap("v", "tp", ":call VSCodeNotify('workbench.actions.view.problems')<cr>", opts)
+-- 打开辅助侧边
+keymap("n", "tf", ":call VSCodeNotify('workbench.action.toggleAuxiliaryBar')<cr>", opts)
+keymap("v", "tf", ":call VSCodeNotify('workbench.action.toggleAuxiliaryBar')<cr>", opts)
 -- 打开输出
 keymap("n", "to", ":call VSCodeNotify('workbench.action.output.toggleOutput')<cr>", opts)
 keymap("v", "to", ":call VSCodeNotify('workbench.action.output.toggleOutput')<cr>", opts)
@@ -114,9 +115,8 @@ keymap("v", "tm", ":call VSCodeNotify('workbench.action.toggleMaximizedPanel')<c
 keymap("n", "tz", ":call VSCodeNotify('workbench.action.toggleZenMode')<cr>", opts)
 keymap("v", "tz", ":call VSCodeNotify('workbench.action.toggleZenMode')<cr>", opts)
 -- 关闭面板
-keymap("n", "tc", ":call VSCodeNotify('workbench.action.closePanel')<cr>", opts)    
-keymap("v", "tc", ":call VSCodeNotify('workbench.action.closePanel')<cr>", opts)   
-
+keymap("n", "tc", ":call VSCodeNotify('workbench.action.closePanel')<cr>", opts)
+keymap("v", "tc", ":call VSCodeNotify('workbench.action.closePanel')<cr>", opts)
 
 -----------窗口相关-----------
 -- 拆分编辑器在下边
@@ -150,7 +150,6 @@ keymap("v", "wm", ":call VSCodeNotify('workbench.action.toggleEditorWidths')<cr>
 keymap("n", "wr", ":call VSCodeNotify('workbench.action.evenEditorWidths')<cr>", opts)
 keymap("v", "wr", ":call VSCodeNotify('workbench.action.evenEditorWidths')<cr>", opts)
 
-
 ----------debug相关----------
 -- 设置断点
 keymap("n", "db", ":call VSCodeNotify('editor.debug.action.toggleBreakpoint')<cr>", opts)
@@ -170,12 +169,21 @@ keymap("v", "da", ":call VSCodeNotify('editor.debug.action.selectionTowatch')<cr
 
 ----------搜索相关-----------
 -- 在整个项目中搜索选中
-keymap("n", "ss", ":call VSCodeNotify('editor.action.addSelectionToNextFindMatch')<cr>:call VSCodeNotify('workbench.action.findInFiles')<cr>", opts)
-keymap("v", "ss", ":call VSCodeNotify('editor.action.addSelectionToNextFindMatch')<cr>:call VSCodeNotify('workbench.action.findInFiles')<cr>", opts)
+keymap(
+	"n",
+	"ss",
+	":call VSCodeNotify('editor.action.addSelectionToNextFindMatch')<cr>:call VSCodeNotify('workbench.action.findInFiles')<cr>",
+	opts
+)
+keymap(
+	"v",
+	"ss",
+	":call VSCodeNotify('editor.action.addSelectionToNextFindMatch')<cr>:call VSCodeNotify('workbench.action.findInFiles')<cr>",
+	opts
+)
 -- 在当前编辑器中搜索
 keymap("n", "sf", ":call VSCodeNotify('actions.find')<cr>", opts)
 keymap("v", "sf", ":call VSCodeNotify('actions.find')<cr>", opts)
-
 
 -----------调整页面相关大小----------
 -- 调大字体大小
@@ -189,10 +197,9 @@ keymap("n", "=r", ":call VSCodeNotify('editor.action.fontZoomReset')<cr>", opts)
 keymap("v", "=r", ":call VSCodeNotify('editor.action.fontZoomReset')<cr>", opts)
 -- 调整图片大小
 -----------格式相关-----------
---格式当前文件  
+--格式当前文件
 keymap("n", "==", ":call VSCodeNotify('editor.action.formatDocument')<cr>", opts)
 keymap("v", "==", ":call VSCodeNotify('editor.action.formatDocument')<cr>", opts)
-
 
 -----------vscode窗口有关----------
 -- 重启vscode
@@ -204,7 +211,6 @@ keymap("v", "rc", ":call VSCodeNotify('workbench.action.closeWindow')<cr>", opts
 -- 重新打开一个vscode窗口
 keymap("n", "rn", ":call VSCodeNotify('workbench.action.newWindow')<cr>", opts)
 keymap("v", "rn", ":call VSCodeNotify('workbench.action.newWindow')<cr>", opts)
-
 
 -----------git相关-----------
 -- 切换或者签出分支
@@ -232,15 +238,13 @@ keymap("v", "gp", ":call VSCodeNotify('git.publish')<cr>", opts)
 keymap("n", "gs", ":call VSCodeNotify('workbench,view,scm')<cr>", opts)
 keymap("v", "gs", ":call VSCodeNotify('workbench,view,scm')<cr>", opts)
 
-
-
 -----------函数定义声明跳转等操作---------------
--- 转到定义 
+-- 转到定义
 keymap("n", "<leader>gd", ":call VSCodeNotify('editor.action.revealDefinition')<cr>", opts)
 keymap("v", "<leader>gd", ":call VSCodeNotify('editor.action.revealDefinition')<cr>", opts)
 -- 速览定义
-keymap("n", "<leader>pd", ":call VSCodeNotify('editor.action.peekDefinition')<cr>", opts)       
-keymap("v", "<leader>pd", ":call VSCodeNotify('editor.action.peekDefinition')<cr>", opts)       
+keymap("n", "<leader>pd", ":call VSCodeNotify('editor.action.peekDefinition')<cr>", opts)
+keymap("v", "<leader>pd", ":call VSCodeNotify('editor.action.peekDefinition')<cr>", opts)
 -- 显示定义预览悬停
 keymap("n", "<leader>sd", ":call VSCodeNotify('editor.action.showDefinitionPreviewHover')<cr>", opts)
 keymap("v", "<leader>sd", ":call VSCodeNotify('editor.action.showDefinitionPreviewHover')<cr>", opts)
@@ -250,8 +254,6 @@ keymap("v", "<leader>pl", ":call VSCodeNotify('editor.action.peekDeclaration')<c
 -- 转到声明
 keymap("n", "<leader>gl", ":call VSCodeNotify('editor.action.revealDeclaration')<cr>", opts)
 keymap("v", "<leader>gl", ":call VSCodeNotify('editor.action.revealDeclaration')<cr>", opts)
-
-
 
 ------------latex相关----------------
 -- 在tab打开latex的pdf
@@ -270,7 +272,6 @@ keymap("v", "mll", ":call VSCodeNotify('latex-workshop.compilerlog')<cr>", opts)
 keymap("n", "mls", ":call VSCodeNotify('latex-workshop.synctex')<cr>", opts)
 keymap("v", "mls", ":call VSCodeNotify('latex-workshop.synctex')<cr>", opts)
 
-
 -----------markdown相关---------------
 -- 在侧边打开markdown预览
 keymap("n", "mt", ":call VSCodeNotify('markdown.showPreviewToSide')<cr>", opts)
@@ -285,18 +286,16 @@ keymap("v", "mb", ":call VSCodeNotify('markdown.preview.refresh')<cr>", opts)
 keymap("n", "ms", ":call VSCodeNotify('markdown.showSource')<cr>", opts)
 keymap("v", "ms", ":call VSCodeNotify('markdown.showSource')<cr>", opts)
 
-
 ----------快速移动插件-----------------
 -- 移动到单词前，这里采用nn快捷键是因为这个没有其他占用
 keymap("n", "nn", ":call VSCodeNotify('jump-extension.jump-to-the-start-of-a-word')<cr>", opts)
 keymap("v", "nn", ":call VSCodeNotify('jump-extension.jump-to-the-start-of-a-word')<cr>", opts)
 
-
 ----------折叠资源文件----------------
 keymap("n", "ee", ":call VSCodeNotify('workbench.files.action.collapseExplorerFolders')<cr>", opts)
 keymap("v", "ee", ":call VSCodeNotify('workbench.files.action.collapseExplorerFolders')<cr>", opts)
 -- vim的复制到系统剪切板
-vim.cmd [[
+vim.cmd([[
 let s:clip = '/mnt/c/Windows/System32/clip.exe' 
 if executable(s:clip)
     augroup WSLYank
@@ -304,4 +303,4 @@ if executable(s:clip)
         autocmd TextYankPost * if v:event.operator ==# 'y' | call system(s:clip, @0) | endif
     augroup END
 endif
-]]
+]])
