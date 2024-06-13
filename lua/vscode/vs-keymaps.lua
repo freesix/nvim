@@ -118,6 +118,11 @@ keymap("v", "tz", ":call VSCodeNotify('workbench.action.toggleZenMode')<cr>", op
 keymap("n", "tc", ":call VSCodeNotify('workbench.action.closePanel')<cr>", opts)
 keymap("v", "tc", ":call VSCodeNotify('workbench.action.closePanel')<cr>", opts)
 
+-----------注释---------------
+-- 将文本latex转化为latex符号
+keymap("n", "mlu", ":call VSCodeNotify('unicode-latex.replaceLatexNames')<cr>", opts)
+keymap("v", "mlu", ":call VSCodeNotify('unicode-latex.replaceLatexNames')<cr>", opts)
+
 -----------窗口相关-----------
 -- 拆分编辑器在下边
 keymap("n", "wj", ":call VSCodeNotify('workbench.action.splitEditorDown')<cr>", opts)
