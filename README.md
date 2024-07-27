@@ -4,6 +4,7 @@
 cmake  
 nodejs  
 ripgrep(telescope插件需要)
+python3-venv
 
 ## 配置步骤
 ### 安装
